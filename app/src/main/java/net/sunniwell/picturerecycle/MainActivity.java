@@ -1,11 +1,14 @@
 package net.sunniwell.picturerecycle;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private PictureSlideLayout mPSLayout;
 
     @Override
@@ -53,8 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onDetachedFromWindow() {
-        mPSLayout.releaseResource();
-        super.onDetachedFromWindow();
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
     }
 }
